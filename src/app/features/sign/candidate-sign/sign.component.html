@@ -1,0 +1,64 @@
+<div class="content">
+    <div class="col-md-12">
+        <form [formGroup]="signCandidateForm">
+            <div class="form-group">
+                <label>First Name</label>
+                <input class="form-control" type="text" id="firstName" formControlName="firstName" placeholder="firstName">
+                <small *ngIf="signCandidateForm.get('firstName').hasError('required') && signCandidateForm.get('firstName').touched" class="form-text text-muted">
+                    İsim zorunludur
+                </small>
+            </div>
+            <div class="form-group">
+                <label>Last Name</label>
+                <input class="form-control" type="text" id="lastName" formControlName="lastName" placeholder="lastName">
+                <small *ngIf="signCandidateForm.get('lastName').hasError('required') && signCandidateForm.get('lastName').touched" class="form-text text-muted">
+                    Soyisim zorunludur
+                </small>
+
+            </div>
+            <div class="form-group">
+                <label>Nationality Identity</label>
+                <input class="form-control" type="text" id="nationalityId" formControlName="nationalityId" placeholder="nationalityId">
+                <small *ngIf="signCandidateForm.get('nationalityId').hasError('required') && signCandidateForm.get('nationalityId').touched" class="form-text text-muted">
+                    Tc kimlik no zorunludur
+                </small>
+
+            </div>
+            <div class="form-group">
+                <label>Birth Year</label>
+                <input class="form-control" type="number" id="birthYear" formControlName="birthYear" placeholder="birthYear">
+                <small *ngIf="signCandidateForm.get('birthYear').hasError('required') && signCandidateForm.get('birthYear').touched" class="form-text text-muted">
+                    Doğum yılı zorunludur
+                </small>
+
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input class="form-control" type="text" id="email" formControlName="email" placeholder="email">
+                <small *ngIf="signCandidateForm.get('email').hasError('required') && signCandidateForm.get('email').touched" class="form-text text-muted">
+                    email zorunludur
+                </small>
+
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input class="form-control" type="password" id="password" [(ngModel)]="password" formControlName="password" placeholder="password">
+                <small *ngIf="signCandidateForm.get('password').hasError('required') && signCandidateForm.get('password').touched" class="form-text text-muted">
+                    password zorunludur
+                </small>
+
+            </div>
+            <div class="form-group">
+                <label>Password Again</label>
+                <input class="form-control" type="password" id="verifyPassword" [(ngModel)]="verifyPassword" formControlName="verifyPassword" placeholder="verifyPassword">
+                <small *ngIf="signCandidateForm.get('verifyPassword').hasError('required') && signCandidateForm.get('verifyPassword').touched" class="form-text text-muted">
+                    password zorunludur
+                </small>
+
+            </div>
+            <button [disabled]="!signCandidateForm.valid" class="btn btn-primary btn-fill" (click)="add()">Sign in</button>
+        </form>
+    </div>
+</div>
+
+

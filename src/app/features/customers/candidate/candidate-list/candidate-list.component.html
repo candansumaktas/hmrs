@@ -1,0 +1,24 @@
+<table  class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col"><h4>First Name</h4></th>
+        <th scope="col"><h4>Last Name</h4></th>
+        <th scope="col"><h4>Nationality Id</h4></th>
+        <th scope="col"><h4>Birth Year</h4></th>
+        <th scope="col"><h4>Email</h4></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let candidate of candidateList | paginate: { itemsPerPage: 10, currentPage: page } ">
+        <th scope="row">{{candidate.id}}</th>
+        <td>{{candidate.firstName}}</td>
+        <td>{{candidate.lastName}}</td>
+        <td>{{candidate.nationalityId}}</td>
+        <td>{{candidate.birthYear}}</td>
+        <td>{{candidate.email}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <pagination-controls class="pagi text-center" (pageChange)="page = $event"></pagination-controls>

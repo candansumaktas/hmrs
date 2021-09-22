@@ -1,0 +1,41 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col"><h6>Company Name</h6></th>
+      <th scope="col"><h6>Position Title</h6></th>
+      <th scope="col"><h6>Number of Open Positions</h6></th>
+      <th scope="col"><h6>Release Date</h6></th>
+      <th scope="col"><h6>Deadline</h6></th>
+      <th><button class="btn btn-outline-dark btn-sm" (click)="SortByCreatedDate()">Tarihe göre sırala</button></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let jobAdvertisement of jobAdvertisements | paginate: { itemsPerPage: 10, currentPage: page }">
+      <th scope="row">{{jobAdvertisement.employer.id}}</th>
+      <td><a routerLink="jobAdvertisements/{{jobAdvertisement.employer.id}}">{{jobAdvertisement.employer.companyName}}</a></td>
+      <td>{{jobAdvertisement.position.title}}</td>
+      <td class="text-center">{{jobAdvertisement.openPositions}}</td>
+      <td>{{jobAdvertisement.createdAt | date :'dd/MM/yyyy'}}</td>
+      <td>{{jobAdvertisement.deadline| date: 'dd/MM/yyyy'}}</td>
+
+
+
+
+      <div *ngIf="checkEmployer(); else elseBlock">
+        <td><button class="btn btn-danger btn-sm" (click)="changeStatus(jobAdvertisement.id,false)">Pasif Yap</button>
+        </td>
+      </div>
+      <ng-template #elseBlock>
+        <td></td>
+      </ng-template>
+      <!-- <td><button class = "btn btn-danger btn-sm"  (click) = "changeStatus(jobAdvertisement.id,false)">Pasif Yap</button></td> -->
+
+
+    </tr>
+  </tbody>
+</table>
+
+
+
+<pagination-controls class="pagi text-center" (pageChange)="page = $event"></pagination-controls>

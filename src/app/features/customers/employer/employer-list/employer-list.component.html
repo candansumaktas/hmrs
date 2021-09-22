@@ -1,0 +1,23 @@
+<table  class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col"><h4>Company Name</h4></th>
+        <th scope="col"><h4>Website</h4></th>
+        <th scope="col"><h4>Phone Number</h4></th>
+        <th scope="col"><h4>Email</h4></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employer of employerList | paginate: { itemsPerPage: 10, currentPage: page }">
+        <th scope="row">{{employer.id}}</th>
+        <td>{{employer.companyName}}</td>
+        <td>{{employer.website}}</td>
+        <td>{{employer.phoneNumber}}</td>
+        <td>{{employer.email}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <pagination-controls class="pagi text-center" (pageChange)="page = $event"></pagination-controls>
+

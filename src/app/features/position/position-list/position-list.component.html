@@ -1,0 +1,16 @@
+<table  class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Position Title</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let position of positionList | paginate: { itemsPerPage: 10, currentPage: page }">
+        <th scope="row">{{position.id}}</th>
+        <td>{{position.title}}</td>
+      </tr>
+    </tbody>
+</table>
+
+<pagination-controls class="pagi text-center" (pageChange)="page = $event"></pagination-controls>

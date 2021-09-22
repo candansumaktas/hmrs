@@ -1,0 +1,62 @@
+<!-- <div class="content">
+    <div class="card">
+        <div class="card-body">
+
+            <form [formGroup]="candidateSkillForm">
+                <div class="mb-3">
+                    <label>Add Skill</label>
+                    <select  class="form-select" formControlName="skillId" >
+                        <option value="" disabled>Skills </option>
+                        <option *ngFor="let skill of skills" [ngValue]="skill.id" >{{skill.name}}</option>  
+                    </select>
+                </div>
+            </form>       
+        
+    </div>
+</div> -->
+<h5>Skill</h5>
+<h2>Skill Add </h2>
+<p>Center the modal vertically and horizontally within the page, with the .modal-dialog-centered class.</p>
+<div class="card-header">
+  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#skillAdd">
+   
+     Add 
+   
+  </button>
+  <!-- Modal -->
+  <div class="modal fade" id="skillAdd" tabindex="-1" aria-labelledby="skillAdd" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="skillAdd">skill Add</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="content">
+            <div class="card">
+                <div class="card-body">
+        
+                    <form [formGroup]="candidateSkillForm">
+                        <div class="mb-3">
+                            <label>Add Skill</label>
+                            <select  class="form-select" formControlName="skillId" >
+                                <option value="" disabled>Skills </option>
+                                <option *ngFor="let skill of skills" [ngValue]="skill.id" >{{skill.name}}</option>  
+                            </select>
+                        </div>
+                    </form>       
+                
+            </div>
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+
+

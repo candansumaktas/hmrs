@@ -1,0 +1,74 @@
+<div class="content">
+    <div class="card">
+        <div class="card-header">
+            <h5>Add Job Advertisement</h5>
+        </div>
+        <div class="card-body">
+
+            <form [formGroup]="jobAdvertisementForm">
+                <div class="mb-3">
+                    <label>City</label>
+                    <select  class="form-select" formControlName="cityId" >
+                        <option value="" disabled>cities </option>
+                        <option *ngFor="let city of cities" [ngValue]="city.id" >{{city.name}}</option>  
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label>Deadline</label>
+                    <input type="date" placeholder="Deadline" formControlName="deadline" class="form-control"  />
+                </div>
+                <div class="mb-3">
+                    <label>Company Name</label>
+                    <select  class="form-select" formControlName="employerId" >
+                        <option *ngFor="let employer of employers" [ngValue]="employer.id" >{{employer.companyName}}</option>  
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label>job Description</label>
+                    <input type="text" placeholder="jobDescription" formControlName="jobDescription"
+                        class="form-control" />
+                </div>
+                <div class="mb-3">
+                    <label>Minumum Salary</label>
+                    <input type="number" placeholder="minSalary" formControlName="minSalary" class="form-control" />
+                </div>
+                <div class="mb-3">
+                    <label>Maximum Salary</label>
+                    <input type="number" placeholder="maxSalary" formControlName="maxSalary" class="form-control" />
+                </div>
+                <div class="mb-3">
+                    <label>Number of Positions</label>
+                    <input type="number" placeholder="openPositions" formControlName="openPositions"
+                        class="form-control" />
+                </div>
+                <div class="mb-3">
+                    <label>Work Model</label>
+                    <select  class="form-select" formControlName="workModel" >
+                        <option >hybrid</option>  
+                        <option >office</option> 
+                        <option >internship</option> 
+                        <option >seasonal</option> 
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label>Position Name</label>
+                    <select name="positionId" id="positionId" class="form-control" formControlName="positionId">
+                        <option *ngFor="let position of positions" [ngValue]="position.id">{{position.title}}</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label>Work Time</label>
+                    <select  class="form-select" formControlName="workTime" >
+                        <option >full time</option> 
+                        <option >part time</option>  
+                    </select>
+                </div>
+            </form>
+        </div>
+        <div class="card-footer">
+            <button [disabled]="!jobAdvertisementForm.valid" (click)="add()" class="btn btn-primary">
+                Add
+            </button>
+        </div>
+    </div>
+</div>

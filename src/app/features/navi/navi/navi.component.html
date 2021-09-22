@@ -1,0 +1,165 @@
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+    <div class="container-fluid">
+      <a class="navbar-brand text-primary" href="/"><i class="bi bi-person-lines-fill" style="font-size: 2rem"></i><span
+          class="ms-2" style="font-size: 1.5rem"><b>SV</b>career</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="me-auto">
+        </div>
+        <div class="btn-group">
+          <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            Lists
+          </button>
+          <ul class="dropdown-menu">
+            
+            <li><a class="dropdown-item" routerLink="list-positions">List Positions</a></li>
+            <li class="nav-item">
+              <a class="dropdown-item"  routerLink="cv-add">Add CV</a>
+            </li>
+            <li><a class="dropdown-item" routerLink="job-advertisement-list">List Active Job Advertisement</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item"> </a></li>
+          </ul>
+        </div>    
+      </div>
+        <li class="list-group list-group-horizontal">
+        <div *ngIf="checkEmployer(); else thenBlock">
+          <app-navi-employer-info></app-navi-employer-info>
+        </div>
+        <ng-template #thenBlock>
+          <div *ngIf="checkSystemEmployee(); else elseIfBlock">
+            <app-navi-system-employee-info></app-navi-system-employee-info>
+          </div>
+        </ng-template>
+        <ng-template #elseIfBlock>
+          <div *ngIf="checkCandidate(); else elseBlock">
+            <app-navi-candidate-info></app-navi-candidate-info>
+          </div>
+        </ng-template>
+         <div class="collapse navbar-collapse navbar-nav me-auto mb-2 mb-lg-0" id="navbarSupportedContent">
+          <ng-template #elseBlock>
+            <app-navi-sign></app-navi-sign>
+            <button type="button" class="btn btn-primary" routerLink="login">
+              Login
+            </button>
+          </ng-template>
+        </div>
+    </div>
+
+  </nav>
+</header>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container-fluid">
+      <a class="navbar-brand text-primary" href="/"
+        ><i class="bi bi-person-lines-fill" style="font-size: 2rem"></i
+        ><span class="ms-2" style="font-size: 1.5rem"><b>SV</b>KARİYER</span></a
+      >
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="me-auto">
+          
+        </div>
+        <div class="flex">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Lists
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+              <li class="nav-item">
+                <a class="dropdown-item"  routerLink="job-advertisement-list">List Active Job Advertisement</a>
+              </li>
+              <li>
+                <a class="dropdown-item" routerLink="list-positions">List Positions</a>
+              </li>
+              <li class="nav-item">
+                <a class="dropdown-item"  routerLink="jobAdvertisementListByDate">List Active Job Advertisement By Date</a>
+              </li>
+              <li class="nav-item">
+                <a class="dropdown-item"  routerLink="jobAdvertisementListEmployer">List Active Job Advertisement By Employer</a>
+              </li>
+              <li class="nav-item">
+                <a class="dropdown-item"  routerLink="cv">Add CV</a>
+              </li>
+            </ul>
+          </li>
+        </div>
+
+        <ul>
+          <div *ngIf="checkEmployer(); else thenBlock">
+            <app-navi-employer-info></app-navi-employer-info>
+          </div>
+          <ng-template #thenBlock>
+            <div *ngIf="checkSystemEmployee(); else elseBlock">
+              <app-navi-system-employee-info></app-navi-system-employee-info>
+            </div>
+          </ng-template>
+          <div
+            class="collapse navbar-collapse navbar-nav me-auto mb-2 mb-lg-0"
+            id="navbarSupportedContent"
+          >
+            <ng-template #elseBlock>
+              <app-navi-sign></app-navi-sign>
+              <li>
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  routerLink="login"
+                >
+                  Login
+                </button>
+              </li>
+            </ng-template>
+          </div>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header> -->
+
+<!-- <div *ngIf="checkUser(); else elseBlock">
+  <app-navi-employer-info></app-navi-employer-info>
+</div>
+<div class=" collapse navbar-collapse navbar-nav me-auto mb-2 mb-lg-0" id="navbarSupportedContent">
+  <ng-template #elseBlock>
+    <app-navi-sign></app-navi-sign>
+    <li><button type="button" class="btn btn-primary" routerLink="login">Login</button></li>
+  </ng-template>
+
+</div> -->

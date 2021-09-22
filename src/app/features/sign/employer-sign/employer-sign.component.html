@@ -1,0 +1,58 @@
+<div class="content">
+    <div class="col-md-12">
+        <form [formGroup]="employerSignForm">
+            <div class="form-group">
+                <label>companyName</label>
+                <input class="form-control" type="text" id="companyName" formControlName="companyName" placeholder="companyName">
+                <small *ngIf="employerSignForm.get('companyName').hasError('required') && employerSignForm.get('companyName').touched" class="form-text text-muted">
+                    İsim zorunludur
+                </small>
+            </div>
+            <div class="form-group">
+                <label>website</label>
+                <input class="form-control" type="text" id="website" formControlName="website" placeholder="website">
+                <small *ngIf="employerSignForm.get('website').hasError('required') && employerSignForm.get('website').touched" class="form-text text-muted">
+                    website zorunludur
+                </small>
+
+            </div>
+            <div class="form-group">
+                <label>phoneNumber</label>
+                <input class="form-control" type="text" id="nationalityId" formControlName="phoneNumber" placeholder="nationalityId">
+                <small *ngIf="employerSignForm.get('phoneNumber').hasError('required') && employerSignForm.get('phoneNumber').touched" class="form-text text-muted">
+                    phone number zorunludur
+                </small>
+
+            </div>
+    
+            <div class="form-group">
+                <label>email</label>
+                <input class="form-control" type="text" id="email" formControlName="email" placeholder="email">
+                <small *ngIf="employerSignForm.get('email').hasError('required') && employerSignForm.get('email').touched" class="form-text text-muted">
+                    email zorunludur
+                </small>
+
+            </div>
+            <div class="form-group">
+                <label>password</label>
+                <input class="form-control" type="text" id="password" [(ngModel)]="password" formControlName="password" placeholder="password">
+                <small *ngIf="employerSignForm.get('password').hasError('required') && employerSignForm.get('password').touched" class="form-text text-muted">
+                    password zorunludur
+                </small>
+
+            </div>
+            <div class="form-group">
+                <label>password Again</label>
+                <input class="form-control" type="text" id="verifyPassword" [(ngModel)]="verifyPassword" formControlName="verifyPassword" placeholder="verifyPassword">
+                <small *ngIf="employerSignForm.get('verifyPassword').hasError('required') && employerSignForm.get('verifyPassword').touched" class="form-text text-muted">
+                    password zorunludur
+                </small>
+
+            </div>
+            <button [disabled]="!employerSignForm.valid" class="btn btn-primary btn-fill" (click)="add()">Sign in</button>
+        </form>
+    </div>
+</div>
+
+
+

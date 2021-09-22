@@ -1,0 +1,19 @@
+ <div class="flex">
+    <li  class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            Hoşgeldiniz {{getCandidateInfo().firstName}} 
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li>
+                <hr class="dropdown-divider">
+            </li>
+            <li><a  class="dropdown-item" routerLink="cv-add">Add Cv</a></li>
+            <li><a  class="dropdown-item" routerLink="list-employer">List Employer</a></li>
+            <li><a  class="dropdown-item" routerLink="job-advertisement-list">Job Advertisement List</a></li>
+            <li><a class="dropdown-item" routerLink="job-advertisement-add">Job Advertisement Add</a></li>
+            <li><a  class="dropdown-item" (click)="signOut()" >Çıkış yap</a></li>
+        </ul>
+    </li>
+    
+</div>

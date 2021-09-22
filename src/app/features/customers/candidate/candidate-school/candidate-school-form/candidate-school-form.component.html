@@ -1,0 +1,97 @@
+<!-- <div class="content">
+    <div class="card">
+        <div class="card-body">
+
+            <form [formGroup]="candidateSchoolForm">
+                <div class="mb-3">
+                    <label>School</label>
+                    <select  class="form-select" formControlName="schoolId" >
+                        <option value="" disabled>cities </option>
+                        <option *ngFor="let school of schools" [ngValue]="school.id" >{{school.name}}</option>  
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label>Graduation Year</label>
+                    <input type="year" placeholder="graduationYear" formControlName="graduationYear" class="form-control"  />
+                </div>
+                <div class="mb-3">
+                    <label>Department Name</label>
+                    <select  class="form-select" formControlName="departmentId" >
+                        <option *ngFor="let department of departments" [ngValue]="department.id" >{{department.name}}</option>  
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label>Start Year</label>
+                    <input type="year" placeholder="startYear" formControlName="startYear"
+                        class="form-control" />
+                </div>
+            </form>
+        </div>
+        
+    </div>
+</div> -->
+    <h5>School</h5>
+    <h2>School Add </h2>
+    <p>Center the modal vertically and horizontally within the page, with the .modal-dialog-centered class.</p>
+
+<div class="card-header">
+  
+  
+  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#schoolAdd">
+   
+     Add 
+   
+  </button>
+  <!-- Modal -->
+  <div class="modal fade" id="schoolAdd" tabindex="-1" aria-labelledby="schoolAdd" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="schoolAdd">School Add</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="content">
+            <div class="card">
+                <div class="card-body">
+        
+                    <form [formGroup]="candidateSchoolForm">
+                        <div class="mb-3">
+                            <label>School</label>
+                            <select  class="form-select" formControlName="schoolId" >
+                                <option value="" disabled>cities </option>
+                                <option *ngFor="let school of schools" [ngValue]="school.id" >{{school.name}}</option>  
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label>Graduation Year</label>
+                            <input type="year" placeholder="graduationYear" formControlName="graduationYear" class="form-control"  />
+                        </div>
+                        <div class="mb-3">
+                            <label>Department Name</label>
+                            <select  class="form-select" formControlName="departmentId" >
+                                <option *ngFor="let department of departments" [ngValue]="department.id" >{{department.name}}</option>  
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label>Start Year</label>
+                            <input type="year" placeholder="startYear" formControlName="startYear"
+                                class="form-control" />
+                        </div>
+                    </form>
+                </div>
+                
+            </div>
+        </div>
+   
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+  
+

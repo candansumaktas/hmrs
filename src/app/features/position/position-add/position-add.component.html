@@ -1,0 +1,14 @@
+<div class="content">
+    <div class="col-md-12">
+        <form [formGroup]="positionAddForm">
+            <div class="form-group">
+                <label>Add Position</label>
+                <input class="form-control" type="text" id="title" formControlName="title" placeholder="title">
+                <small *ngIf="positionAddForm.get('title').hasError('required') && positionAddForm.get('title').touched" class="form-text text-muted">
+                    input zorunludur
+                </small>
+            </div>
+            <button [disabled]="!positionAddForm.valid" class="btn btn-primary btn-fill" (click)="positionAdd()" routerLink="listPositions">Add</button>
+        </form>
+    </div>
+</div>

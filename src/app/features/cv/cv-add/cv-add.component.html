@@ -1,0 +1,75 @@
+<div class="content">
+  <div class="card">
+    <div class="card-body">
+      <div class="card-header">
+        <h5>Create Cv</h5>
+      </div>
+
+
+      <div class="mb-3">
+        <label>CV Title</label>
+        <input
+          type="text"
+          placeholder=" Cv Title"
+          formControlName="title"
+          class="form-control"
+        />
+      </div>
+      <app-candidate-school-form></app-candidate-school-form>
+      <app-candidate-job-experince-form></app-candidate-job-experince-form>
+      <app-candidate-language-form></app-candidate-language-form>
+      <app-candidate-skill-from></app-candidate-skill-from>
+
+
+
+      <div class="mb-3">
+        <label>Cover Letter</label>
+        <input
+          type="text"
+          placeholder="coverLetter"
+          formControlName="coverLetter"
+          class="form-control"
+        />
+      </div>
+
+      <div class="mb-3">
+        <label>Enter Github Link</label>
+        <input
+          type="text"
+          placeholder="githubAccount"
+          formControlName="githubAccount"
+          class="form-control"
+        />
+      </div>
+
+      <div class="mb-3">
+        <label>Enter Linkedin</label>
+        <input
+          type="text"
+          placeholder="linkedinAccount"
+          formControlName="linkedinAccount"
+          class="form-control"
+        />
+      </div>
+      <div class="card-footer">
+        <button
+          [disabled]="!cvAddForm.valid"
+          (click)="cvAdd()"
+          class="btn btn-primary"
+        >
+          Add
+        </button>
+      </div>
+      
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
